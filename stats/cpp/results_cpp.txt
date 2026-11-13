@@ -1,0 +1,15 @@
+== Experiment 1: label noise (n_train=1000, n_test=2000 clean labels, d=10, sep=1.0) ==
+noise   kNN(k=5)                GaussianNB              LogisticRegression      DecisionTree(depth=8)   AveragedPerceptron      
+0.00    tr=0.922 te=0.878       tr=0.903 te=0.911       tr=0.903 te=0.910       tr=0.975 te=0.866       tr=0.907 te=0.910       
+0.10    tr=0.869 te=0.880       tr=0.856 te=0.926       tr=0.852 te=0.924       tr=0.924 te=0.837       tr=0.855 te=0.925       
+0.20    tr=0.806 te=0.819       tr=0.762 te=0.921       tr=0.756 te=0.920       tr=0.857 te=0.790       tr=0.755 te=0.917       
+0.30    tr=0.743 te=0.734       tr=0.670 te=0.904       tr=0.670 te=0.894       tr=0.780 te=0.807       tr=0.673 te=0.893       
+0.40    tr=0.715 te=0.623       tr=0.584 te=0.867       tr=0.587 te=0.862       tr=0.771 te=0.662       tr=0.585 te=0.876       
+0.50    tr=0.703 te=0.482       tr=0.561 te=0.469       tr=0.545 te=0.468       tr=0.687 te=0.526       tr=0.543 te=0.461       
+
+== Experiment 2: scalability (d=10, sep=1.0, noise=0.1; fit s / predict-2000 s) ==
+n       kNN(k=5)                GaussianNB              LogisticRegression      DecisionTree(depth=8)   AveragedPerceptron      
+500     0.0000 / 0.0620         0.0000 / 0.0008         0.0076 / 0.0002         0.0068 / 0.0002         0.0008 / 0.0001         
+2000    0.0003 / 0.2256         0.0001 / 0.0008         0.0344 / 0.0000         0.0318 / 0.0005         0.0049 / 0.0001         
+8000    0.0012 / 1.0718         0.0004 / 0.0009         0.1288 / 0.0001         0.1790 / 0.0003         0.0214 / 0.0001         
+32000   0.0045 / 5.4407         0.0022 / 0.0007         0.5991 / 0.0001         1.0032 / 0.0004         0.0990 / 0.0000         
