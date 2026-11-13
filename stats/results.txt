@@ -1,0 +1,40 @@
+
+== Linearly separable-ish blobs, clean (train=700, test=300) ==
+model        train acc  test acc   fit s  pred s
+kNN(k=5)         0.981     0.967    0.00    1.03
+GaussianNB       0.981     0.967    0.00    0.01
+LogReg           0.964     0.957    0.95    0.00
+Perceptron       0.977     0.967    0.17    0.00
+Tree(d=6)        0.993     0.943    0.12    0.00
+
+== XOR (non-linear), clean (train=700, test=300) ==
+model        train acc  test acc   fit s  pred s
+kNN(k=5)         0.956     0.927    0.00    1.09
+GaussianNB       0.530     0.493    0.00    0.00
+LogReg           0.520     0.497    0.81    0.00
+Perceptron       0.547     0.500    0.19    0.00
+Tree(d=6)        0.953     0.853    0.13    0.00
+
+== Blobs, 30% training labels flipped (train=700, test=300) ==
+model        train acc  test acc   fit s  pred s
+kNN(k=5)         0.750     0.843    0.00    1.05
+GaussianNB       0.693     0.970    0.00    0.00
+LogReg           0.684     0.970    0.85    0.00
+Perceptron       0.424     0.290    0.20    0.00
+Tree(d=6)        0.746     0.777    0.15    0.00
+
+== Pure random labels (no signal) (train=700, test=300) ==
+model        train acc  test acc   fit s  pred s
+kNN(k=5)         0.681     0.550    0.00    1.00
+GaussianNB       0.530     0.520    0.00    0.01
+LogReg           0.521     0.537    0.91    0.00
+Perceptron       0.496     0.473    0.21    0.00
+Tree(d=6)        0.646     0.470    0.13    0.00
+
+== Scalability: fit+predict time (s) vs n ==
+model            250     500    1000    2000
+kNN(k=5)        0.05    0.23    0.94    4.08
+GaussianNB      0.00    0.00    0.01    0.01
+LogReg          0.21    0.41    0.83    1.88
+Perceptron      0.04    0.08    0.16    0.35
+Tree(d=6)       0.02    0.05    0.14    0.28
